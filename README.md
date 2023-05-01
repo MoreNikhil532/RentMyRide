@@ -6,7 +6,7 @@ RentMyRide is a web application built with Django, which allows users to rent ve
 
 1. Clone the repository
    ```
-   git clone https://github.com/username/RentMyRide.git
+   git clone https://github.com/MoreNikhil532/RentMyRide.git
    ```
 2. Create a virtual environment and activate it
    ```
