@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block login-btn %}
+
+<div class="justify-content-end">
+    <ul class="navbar-nav">
+
+        
+        <li class="nav-item">
+            <a class="btn btn-danger login-btn" aria-current="page" href="/login">Login</a>
+        </li>
+
+
+    </ul>
+</div>
+</div>
+
+{% endblock login-btn %}
+
+{% block ad %}
+
+<div class="container-fluid slogan">
+    <div class="vector">
+        <img src="{% static 'images/imgg.jpg' %}" alt="">
+    </div>
+    <h3>Unlock the world with RentMyRide - Rent a car today!</h3>
+    <a type="button" class="btn btn-danger my-2" href="/login">Book Now</a>
+</div>
+<hr>
+{% endblock ad %}
+
+{% block posters %}
+<h3>Explore</h3>
+<div class="row my-4 gy-4">
+    <div class="col-sm-4 ">
+        <div class="card">
+            <img src="{% static 'images/car.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4>Cars</h4>
+                <p class="card-text">Looking for a convenient and affordable way to explore the city? RentMyRide has got
+                    you covered! Our app offers a wide range of cars available for rent, from stylish sports cars to
+                    spacious SUVs. With easy booking and pick-up options, RentMyRide is the perfect solution for your
+                    next adventure. Download the app today and hit the road with RentMyRide!</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <img src="{% static 'images/e-car.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4>Electric Cars</h4>
+                <p class="card-text">Experience the future of driving with RentMyRide's electric cars! Our app offers a
+                    selection of eco-friendly vehicles that will take you where you need to go while minimizing your
+                    carbon footprint. With RentMyRide, you can enjoy a smooth and silent ride while saving money on gas.
+                    Download the app today and choose from our range of electric cars to start your sustainable journey!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <img src="{% static 'images/motorcycle.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4>Motorcycles</h4>
+                <p class="card-text">Experience the thrill of the open road with RentMyRide's motorcycle rentals! With a
+                    variety of motorcycles available to rent, our app makes it easy to hit the road and explore your
+                    destination in style. Whether you're a seasoned rider or a beginner, our motorcycles are comfortable
+                    and easy to handle, making them perfect for your next adventure. Download the app today and start
+                    your motorcycle journey with RentMyRide!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <img src="{% static 'images/moped.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4>Moped</h4>
+                <p class="card-text">Looking for an efficient and fun way to navigate through the city? RentMyRide's
+                    moped rentals are here to help! Our app offers a range of stylish and easy-to-ride mopeds that are
+                    perfect for city commutes or leisurely rides. With RentMyRide, you can quickly and easily book and
+                    pick up your moped rental and start exploring the city in no time. Download the app today and zip
+                    around town with RentMyRide's moped rentals!</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <img src="{% static 'images/e-bike.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4>Electric Bikes</h4>
+                <p class="card-text">Looking for a sustainable and convenient way to get around town? RentMyRide's
+                    electric two-wheeler rentals have got you covered! Our app offers a range of electric scooters and
+                    bikes that are perfect for urban commuting or exploring the city. With RentMyRide, you can easily
+                    book and pick up your electric two-wheeler rental, and enjoy a smooth and efficient ride that is
+                    kind to the environment. Download the app today and start your sustainable journey with RentMyRide's
+                    electric two-wheeler rentals!</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <img src="{% static 'images/van.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4>Vans</h4>
+                <p class="card-text">Need a reliable and spacious vehicle for your next move or project? RentMyRide's
+                    utility van rentals are here to help! Our app offers a range of utility vans that are perfect for
+                    transporting cargo, furniture, or equipment. With RentMyRide, you can easily book and pick up your
+                    utility van rental, and get the job done with ease. Our vans are equipped with plenty of space and
+                    features that will help make your moving or work project a success. Download the app today and rent
+                    a utility van with RentMyRide for your next task!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+{% endblock posters %}

@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.logo {
+    color: #FF6969;
+    font-family: 'Dongle', sans-serif;
+    cursor: default;
+    font-size: 6vh;
+    text-decoration: none;
+}
+
+.login-btn {
+    border-radius: 4px;
+    background-color: #FF6969;
+    color: #FFEAEA;
+    font-family: 'Anuphan', sans-serif;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.background {
+    background-color: #fff;
+    min-height: 10vh;
+    border-radius: 8px;
+    border: 1px solid #FFEAEA;
+}
+
+.banner {
+    min-height: 90vh;
+    /* background-image: url('vector.jpg'); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 6px;
+}
+.slogan{
+    text-align: center;
+}
+.btn{
+    background-color: #FF6969;
+}
+
+
+.vector img{
+    width: 50%;
+    height: auto;
+}
+/* footer section */
+footer {
+    background-color: #2c2c2c;
+    /* blackish shade */
+    color: #fff;
+    /* text color */
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+footer p {
+    margin-bottom: 0;
+}
+
+footer ul {
+    margin-bottom: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    margin-right: 10px;
+
+}
+
+footer ul li:last-child {
+    margin-right: 0;
+}
+

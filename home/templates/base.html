@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Book Now | RentMyRide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Styles/style.css' %}">
+    <link rel="icon" href="data:,">
+</head>
+
+<body>
+    <div class="container-fluid background px-0 ">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="logo"> RentMyRide </a>
+                {% block login-btn %} {% endblock login-btn %}
+
+        </nav>
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+
+        <div class="container-fluid banner">
+            {% block ad %}{% endblock ad %}
+
+
+        </div>
+        <div class="container posters">
+            {% block posters %}{% endblock posters %}
+
+        </div>
+        <div class="container">
+            {% block reviews %} {% endblock reviews %}
+        </div>
+    </div>
+    <footer>
+        <div class="container justify-content-center">
+            <div class="row">
+                <div>
+                    <p>&copy; 2023 RentMyRide . All rights reserved.</p>
+
+                </div>
+                <div>
+                    <ul class="list-inline">
+
+                        <li><a href="/TnC">Terms of Use</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+        
+
+    <script>
+        function capitalizeAndFormat() {
+            var input = document.getElementById("license-number");
+            var val = input.value.toUpperCase(); // convert to uppercase
+            var len = val.length;
+
+            if (len > 2) {
+                val = val.substring(0, 2) + val.substring(2).replace(/[^\w\s]/gi, ''); // remove any non-alphanumeric characters after 2 characters
+            }
+
+            if (len > 4) {
+                val = val.substring(0, 4) + val.substring(4).replace(/\s+/g, ''); // remove any spaces after 4 characters
+            }
+
+            if (len > 7) {
+                val = val.substring(0, 7) + val.substring(7).replace(/[^\d]/g, ''); // remove any non-numeric characters after 7 characters
+            }
+
+            input.value = val;
+        }
+        
+    </script>
+    
+</body>
+
+</html>
