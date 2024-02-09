@@ -36,9 +36,9 @@ def check(a,b):
     else:
         return 
     
-def send_booking_confirmation_email(user_name, vehicle, cost):
+def send_booking_confirmation_email(user, vehicle, cost):
     sub = "Successful Vehicle Booking Confirmation @RentMyRide"
-    msg = f"\n\nDear {user_name.first_name},\n\n" \
+    msg = f"\n\nDear {user.first_name},\n\n" \
           f"Congratulations! Your vehicle booking on RentMyRide has been successfully confirmed. Here are the details of your booking:\n\n" \
           f"- Vehicle: {vehicle.reg_no}\n" \
           f"- Pickup Date and Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n" \
@@ -49,30 +49,33 @@ def send_booking_confirmation_email(user_name, vehicle, cost):
           f"Safe travels!\n\n" \
           f"Best regards,\nRentMyRide Team"
 
-    uemail = user_name.username
+    uemail = user.email
     to = [uemail]
     send_email(sub, msg, to)
 
-def send_account_creation_email(user_name, user_email):
-    subject = 'Welcome to RentMyRide!'
-    message = f'Dear {user_name.first_name},\n\nWelcome to RentMyRide! We are thrilled to have you on board. Your account has been created successfully. Explore our platform to find the perfect vehicle for your needs.\n\nThank you for choosing RentMyRide!\n\nBest regards,\nThe RentMyRide Team'
-    from_email = settings.DEFAULT_FROM_EMAIL
-    recipient_list = [user_email]
-    send_mail(subject, message, from_email, recipient_list)
+def send_account_creation_email(user):
+    subject = 'Account Created Successfully @RentMyRide'
+    message = f'Dear {user.first_name},\n\nWelcome to RentMyRide! We are thrilled to have you on board. Your account has been created successfully. Explore our platform to find the perfect vehicle for your needs.\n\nThank you for choosing RentMyRide!\n\nBest regards,\nThe RentMyRide Team'
+    from_email = settings.EMAIL_HOST_USER
+    to_email = [user.email]
+
+    send_mail(subject, message, from_email, to_email)
 
 def generate_otp():
     return str(random.randint(1000, 9999))
 
-def send_otp_verification_email(user_name, user_email, otp_sent):
+def send_otp_verification_email(user, otp_sent):
     subject = 'OTP for Account Deletion Verification'
-    message = f'Dear {user_name.first_name},\n\nTo verify your identity and proceed with the account deletion process, please enter the following One-Time Password (OTP):\n\nOTP: {otp_sent}\n\nThis OTP is valid for a short period. Do not share it with anyone.\n\nBest regards,\nThe RentMyRide Team'
-    from_email = settings.DEFAULT_FROM_EMAIL
-    recipient_list = [user_email]
+    message = f'Dear {user.first_name},\n\nTo verify your identity and proceed with the account deletion process, please enter the following One-Time Password (OTP):\n\nOTP: {otp_sent}\n\nThis OTP is valid for a short period. Do not share it with anyone.\n\nBest regards,\nThe RentMyRide Team'
+    from_email = settings.EMAIL_HOST_USER
+    recipient_list = [user.email]
     send_mail(subject, message, from_email, recipient_list)
 
-def send_account_deletion_email(user_name, user_email):
+def send_account_deletion_email(user):
     subject = 'Account Deletion Confirmation'
-    message = f'Dear {user_name.first_name},\n\nWe regret to inform you that your RentMyRide account has been successfully deleted. If you did not initiate this action, please contact our support team.\n\nThank you for being a part of RentMyRide.\n\nBest regards,\nThe RentMyRide Team'
-    from_email = settings.DEFAULT_FROM_EMAIL
-    recipient_list = [user_email]
+    message = f'Dear {user.first_name},\n\nWe regret to inform you that your RentMyRide account has been successfully deleted. If you did not initiate this action, please contact our support team.\n\nThank you for being a part of RentMyRide.\n\nBest regards,\nThe RentMyRide Team'
+    from_email = settings.EMAIL_HOST_USER
+    recipient_list = [user.email]
     send_mail(subject, message, from_email, recipient_list)
+
+

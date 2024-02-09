@@ -38,7 +38,7 @@ def home(request):
             Vehicles.objects.filter(id=sr_no).update(isBooked=True)
 
             # Send booking confirmation email
-            send_booking_confirmation_email(user_name=request.user, vehicle=mycar, cost=cost)
+            send_booking_confirmation_email(user=request.user, vehicle=mycar, cost=cost)
 
             messages.success(request, "Your Booking is done Successfully.!")
         except:
@@ -61,8 +61,7 @@ def signup(request):
                 user.first_name = fname
                 user.last_name = lname
                 user.save()
-                #account creation mail
-                send_account_creation_email(user_name=user.username, user_email=user.email)
+                send_account_creation_email(user)
                 return redirect('login')
             except:
                 messages.error(request, "User already Exists.!")
@@ -158,12 +157,13 @@ def delete_account(request):
     if 'otp_sent' not in request.session:
         otp_sent = generate_otp()
         request.session['otp_sent'] = otp_sent
-        send_otp_verification_email(user_name=user.username, user_email=user.email, otp_sent=otp_sent)
+        send_otp_verification_email(user, otp_sent)
 
     if request.method == 'POST':
         entered_otp = request.POST.get('otp')
+
         if entered_otp == request.session.get('otp_sent'):
-            send_account_deletion_email(user_name=user.username, user_email=user.email)
+            send_account_deletion_email(user)
             del request.session['otp_sent']
             user.delete()
             messages.success(request, "Your account has been successfully deleted.")
